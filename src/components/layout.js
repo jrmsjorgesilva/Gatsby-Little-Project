@@ -25,6 +25,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      {/* HEADER */}
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
         style={{
@@ -34,13 +35,30 @@ const Layout = ({ children }) => {
           paddingTop: 0,
         }}
       >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        {/* MAIN */}
+        <main
+        style={{
+          minHeight: '80vh',
+        }}
+        >
+          {children}
+        </main>
+        {/* FOOTER */}
+        
       </div>
+      <footer
+        style={{
+          background: 'rebeccapurple',
+          color: 'white',
+        }}
+        >
+          Jorge Machado © {new Date().getFullYear()}, Built with
+          {` `}
+          <a 
+            href="https://www.gatsbyjs.org" 
+            target='blank'
+          ><strong>Gatsby</strong></a>
+        </footer>
     </>
   )
 }
